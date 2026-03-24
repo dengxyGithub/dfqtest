@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Mac 软件安装指导</title>
+  <link
+    href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css"
+    rel="stylesheet"
+  />
+  <style>
+    .step-img { max-width: 100%; height: auto; border-radius: 8px; }
+    .copy-btn {
+      color: #007bff;
+      cursor: pointer;
+      text-decoration: underline;
+      margin-left: 8px;
+    }
+    .highlight { background-color: #ffe500; padding: 0 4px; }
+    .warning {
+      background-color: #fff3cd;
+      border-left: 4px solid #ffc107;
+      padding: 12px;
+      margin: 16px 0;
+    }
+    #remainingCount {
+      font-size: 18px;
+      font-weight: bold;
+      margin-bottom: 10px;
+    }
+  </style>
+</head>
+<body class="bg-light">
+  <div class="container py-4" style="max-width: 800px;">
+    <!-- 标题 -->
+    <div class="jumbotron shadow-sm bg-white text-center">
+      <h1 class="display-4">🍎 Mac 软件安装指导</h1>
+      <p class="lead">
+        请<strong>严格按照以下步骤操作</strong>，避免安装失败！
+      </p>
+      <p>
+        <span style="font-size: 20px;">
+          ⭐ 安装完成后，请在淘宝<strong class="highlight">5星带图好评</strong>，
+          自动领取：<strong>预设 + 插件 + 视频教程</strong>
+        </span>
+      </p>
+    </div>
+
+    <!-- 步骤（略） -->
+    <div class="card shadow-sm mb-4">
+      <div class="card-header bg-white h5">第 1 步：打开 App Store</div>
+      <img src="https://img.alicdn.com/imgextra/i3/3549424398/O1CN01wWKA2h1iMKeVCcTpf_!!3549424398.png" class="step-img" alt="第一步" />
+    </div>
+    <div class="card shadow-sm mb-4">
+      <div class="card-header bg-white h5">第 2 步：点击顶部“商店”</div>
+      <img src="https://img.alicdn.com/imgextra/i3/3549424398/O1CN01SZEHWP1iMKeK4PAiX_!!3549424398.png" class="step-img" alt="第二步" />
+      <div class="card-body">选择“退出登录”或“登录”</div>
+    </div>
+    <div class="card shadow-sm mb-4">
+      <div class="card-header bg-white h5">第 3 步：登录新账号</div>
+      <img src="https://img.alicdn.com/imgextra/i3/3549424398/O1CN01JPOM4d1iMKeTBiS8R_!!3549424398.png" class="step-img" alt="第三步" />
+    </div>
+
+    <!-- ✅ 新增：显示剩余次数 + 按钮 -->
+    <div class="text-center my-4">
+      <!-- 动态显示剩余次数 -->
+      <div id="remainingCount">加载中...</div>
+      
+      <button
+        id="getAccountBtn"
+        class="btn btn-primary btn-lg"
+        onclick="tryGetAccount()"
+      >
+        🔑 点我获取账号和密码
+      </button>
+      <p class="text-muted mt-2">（每月限 5 次，请确认看完教程再点）</p>
+    </div>
+
+    <!-- 后续步骤（略） -->
+    <div class="card shadow-sm mb-4">
+      <div class="card-header bg-white h5">第 4 步：点击左下角头像</div>
+      <img src="https://img.alicdn.com/imgextra/i1/3549424398/O1CN01qMmcKs1iMKeVxspWW_!!3549424398.png" class="step-img" alt="第四步" />
+    </div>
+    <div class="card shadow-sm mb-4">
+      <div class="card-header bg-white h5">第 5 步：选择购买人 “dfq”</div>
+      <img src="https://img.alicdn.com/imgextra/i4/2217503595728/O1CN01GG7CT11sBTi53dr7c_!!2217503595728.jpg" class="step-img" alt="第五步-1" />
+      <img src="https://img.alicdn.com/imgextra/i2/2217503595728/O1CN01Hw8kVf1sBTi5GZQyu_!!2217503595728.jpg" class="step-img mt-2" alt="第五步-2" />
+    </div>
+    <div class="card shadow-sm mb-4">
+      <div class="card-header bg-white h5">第 6 步：点击云朵下载</div>
+      <img src="https://img.alicdn.com/imgextra/i2/2217503595728/O1CN01z1Cz4U1sBTi4Tflcp_!!2217503595728.jpg" class="step-img" alt="第六步" />
+      <div class="card-body">软件上方的日期是购买时间，不是版本号！</div>
+    </div>
+
+    <h2 class="text-center my-4">📽️ 1 分钟安装视频</h2>
+    <video controls width="100%" height="400" class="shadow rounded">
+      <source src="https://cloud.video.taobao.com/play/u/2207442085186/p/1/e/6/t/1/287856503570.mp4" type="video/mp4" />
+      您的浏览器不支持视频播放。
+    </video>
+
+    <div class="warning mt-4">
+      <strong>❗ 常见问题：</strong><br />
+      • 登录失败？→ 重启电脑 / 切换 WiFi 和 4G<br />
+      • 更新出错？→ 先删除旧软件，再重新下载<br />
+      • 密码注意大小写！建议直接复制
+    </div>
+
+    <div class="card bg-info text-white mt-4">
+      <div class="card-body text-center">
+        <p class="mb-1">需要其他 Mac 软件？（如 PS、PR、AE、Office、达芬奇...）</p>
+        <p class="mb-0">欢迎添加我们的售后管家 👇</p>
+        <img
+          src="这里填售后内容"
+          alt="图片"
+          style="max-width: 200px; margin-top: 10px;"
+        />
+      </div>
+    </div>
+  </div>
+
+  <!-- 账号弹窗 -->
+  <div class="modal fade" id="accountModal" tabindex="-1">
+    <div class="modal-dialog modal-dialog-centered">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title">🔑 账号信息</h5>
+          <button type="button" class="close" data-dismiss="modal">&times;</button>
+        </div>
+        <div class="modal-body text-center">
+          <p style="font-size: 20px;">
+            账号：<strong>xxyu98988@163.com</strong>
+            <span class="copy-btn" onclick="copyText('xxyu98988@163.com')">📋 复制</span>
+          </p>
+          <p style="font-size: 20px;">
+            密码：<strong>Ad258258</strong>
+            <span class="copy-btn" onclick="copyText('Ad258258')">📋 复制</span>
+          </p>
+          <div class="alert alert-warning">
+            ⚠️ 注意：密码区分大小写，复制时不要多出空格！
+          </div>
+          <p>
+            如果提示“需要手机验证码”，请立即联系淘宝客服，发送“<span class="highlight">需要验证</span>”，
+            我们会修改密码，3 分钟后刷新网页即可获取新密码。
+          </p>
+        </div>
+        <div class="modal-footer justify-content-center">
+          <button type="button" class="btn btn-secondary" data-dismiss="modal">关闭</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- 超限提示 -->
+  <div class="modal fade" id="limitModal" tabindex="-1">
+    <div class="modal-dialog modal-dialog-centered">
+      <div class="modal-content">
+        <div class="modal-header bg-danger text-white">
+          <h5 class="modal-title">❌ 领取次数已用完</h5>
+          <button type="button" class="close" data-dismiss="modal">&times;</button>
+        </div>
+        <div class="modal-body text-center">
+          <p style="font-size: 18px;">
+            您本月已领取 <strong>5 次</strong> 账号密码。<br />
+            请下月 1 号后再试，或联系淘宝客服获取帮助！
+          </p>
+        </div>
+        <div class="modal-footer justify-content-center">
+          <button type="button" class="btn btn-primary" data-dismiss="modal">知道了</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- JS -->
+  <script src="https://cdn.jsdelivr.net/npm/jquery@3.6.0/dist/jquery.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.bundle.min.js"></script>
+  <script>
+    // 获取当前年月字符串，如 "2026_2"
+    function getCurrentKey() {
+      const now = new Date();
+      return `account_count_${now.getFullYear()}_${now.getMonth() + 1}`;
+    }
+
+    // 获取当前已使用次数
+    function getUsedCount() {
+      const key = getCurrentKey();
+      return parseInt(localStorage.getItem(key) || '0');
+    }
+
+    // 更新页面上的剩余次数提示
+    function updateRemainingCount() {
+      const used = getUsedCount();
+      const remaining = 5 - used;
+      const el = document.getElementById('remainingCount');
+      
+      if (used >= 5) {
+        el.innerHTML = '❌ 本月领取次数已用完（5/5）';
+        el.style.color = 'red';
+      } else {
+        el.innerHTML = `✅ 本月还可领取：<strong>${remaining}</strong> 次`;
+        el.style.color = '#28a745';
+      }
+    }
+
+    // 尝试领取
+    function tryGetAccount() {
+      const used = getUsedCount();
+      if (used >= 3) {
+        $('#limitModal').modal('show');
+        return;
+      }
+
+      // 增加次数
+      const key = getCurrentKey();
+      localStorage.setItem(key, String(used + 1));
+
+      // 显示账号
+      $('#accountModal').modal('show');
+
+      // 更新页面提示
+      updateRemainingCount();
+    }
+
+    // 复制功能
+    function copyText(text) {
+      if (navigator.clipboard) {
+        navigator.clipboard.writeText(text).then(() => {
+          alert("✅ 已复制到剪贴板！");
+        });
+      } else {
+        const textarea = document.createElement("textarea");
+        textarea.value = text;
+        document.body.appendChild(textarea);
+        textarea.select();
+        document.execCommand("copy");
+        document.body.removeChild(textarea);
+        alert("✅ 已复制（兼容模式）！");
+      }
+    }
+
+    // 页面加载时更新次数提示
+    window.onload = function() {
+      updateRemainingCount();
+    };
+  </script>
+</body>
+</html>
+
+
