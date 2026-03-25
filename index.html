@@ -73,7 +73,7 @@
       >
         🔑 点我获取账号和密码
       </button>
-      <p class="text-muted mt-2">（每月限 5 次，请确认看完教程再点）</p>
+      <p class="text-muted mt-2">（每月限 3 次，请确认看完教程再点）</p>
     </div>
 
     <!-- 后续步骤（略） -->
@@ -132,7 +132,7 @@
             <span class="copy-btn" onclick="copyText('xxyu98988@163.com')">📋 复制</span>
           </p>
           <p style="font-size: 20px;">
-            密码：<strong>Ad258258</strong>
+            密码：<strong>Ad225588</strong>
             <span class="copy-btn" onclick="copyText('Ad258258')">📋 复制</span>
           </p>
           <div class="alert alert-warning">
@@ -160,7 +160,7 @@
         </div>
         <div class="modal-body text-center">
           <p style="font-size: 18px;">
-            您本月已领取 <strong>5 次</strong> 账号密码。<br />
+            您本月已领取 <strong>3 次</strong> 账号密码。<br />
             请下月 1 号后再试，或联系淘宝客服获取帮助！
           </p>
         </div>
@@ -190,11 +190,11 @@
     // 更新页面上的剩余次数提示
     function updateRemainingCount() {
       const used = getUsedCount();
-      const remaining = 5 - used;
+      const remaining = 3 - used; // 改为3次限制
       const el = document.getElementById('remainingCount');
       
-      if (used >= 5) {
-        el.innerHTML = '❌ 本月领取次数已用完（5/5）';
+      if (used >= 3) { // 改为3次限制
+        el.innerHTML = '❌ 本月领取次数已用完（3/3）';
         el.style.color = 'red';
       } else {
         el.innerHTML = `✅ 本月还可领取：<strong>${remaining}</strong> 次`;
@@ -205,7 +205,7 @@
     // 尝试领取
     function tryGetAccount() {
       const used = getUsedCount();
-      if (used >= 3) {
+      if (used >= 3) { // 改为3次限制
         $('#limitModal').modal('show');
         return;
       }
@@ -245,5 +245,3 @@
   </script>
 </body>
 </html>
-
-
